@@ -15,11 +15,40 @@
                     colors: {
                         primary: '#2563eb',
                         secondary: '#1e40af',
-                    }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'slide-up': 'slideUp 0.5s ease-in-out',
+                        'bounce-slow': 'bounce 3s infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                    },
                 }
             }
         }
     </script>
+    <style>
+        .quick-link-card {
+            transition: all 0.3s ease;
+        }
+        .quick-link-card:hover {
+            transform: translateY(-5px);
+        }
+        .skill-icon {
+            transition: all 0.3s ease;
+        }
+        .quick-link-card:hover .skill-icon {
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 <body class="bg-gray-50">
     <div class="2xl:container mx-auto">
@@ -40,28 +69,105 @@
                 </div>
             </header>
 
+            <!-- Navigation -->
+            <nav class="hidden md:block pb-5">
+                <div class="bg-white rounded-full py-5 shadow-lg">
+                    <ul class="flex justify-around font-[prata] text-[16px]">
+                        <li><a href="./index.html" class="text-primary font-semibold">Home</a></li>
+                        <li><a href="./about.html" class="hover:text-primary transition-colors">About</a></li>
+                        <li><a href="./project.html" class="hover:text-primary transition-colors">Project</a></li>
+                        <li><a href="./resume.html" class="hover:text-primary transition-colors">Resume</a></li>
+                        <li><a href="./tools.html" class="hover:text-primary transition-colors">Tools</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <nav class="flex justify-center md:hidden">
+                <div class="bg-white rounded-full shadow-lg py-5 px-2 fixed bottom-5 w-[90%]">
+                    <ul class="flex justify-around font-[prata] text-[16px]">
+                        <li><a href="./index.html" class="text-primary font-semibold">Home</a></li>
+                        <li><a href="./about.html" class="hover:text-primary transition-colors">About</a></li>
+                        <li><a href="./project.html" class="hover:text-primary transition-colors">Project</a></li>
+                        <li><a href="./resume.html" class="hover:text-primary transition-colors">Resume</a></li>
+                        <li><a href="./tools.html" class="hover:text-primary transition-colors">Tools</a></li>
+                    </ul>
+                </div>
+            </nav>
+
             <!-- Hero Section -->
-            <section class="py-20">
+            <section class="py-20 animate-fade-in">
                 <div class="max-w-3xl">
-                    <h1 class="text-4xl md:text-5xl font-[roboto] leading-tight mb-6">
+                    <h1 class="text-4xl md:text-5xl font-[roboto] leading-tight mb-6 animate-slide-up">
                         Hi, I'm <span class="text-primary">M. Muthu Suganthan</span>, an aspiring 
                         <span class="text-primary">MERN Stack Developer</span>, passionate about building responsive and user-friendly web applications.
                     </h1>
-                    <p class="text-lg text-gray-600 mb-8">
+                    <p class="text-lg text-gray-600 mb-8 animate-slide-up" style="animation-delay: 0.2s;">
                         I specialize in creating modern web applications using React, Node.js, and MongoDB. 
                         Let's build something amazing together!
                     </p>
-                    <a href="./about.html" class="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-full hover:bg-secondary transition-colors duration-300">
-                        Learn More About Me
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                    </a>
+                    <div class="flex gap-4 animate-slide-up" style="animation-delay: 0.4s;">
+                        <a href="./about.html" class="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-full hover:bg-secondary transition-colors duration-300">
+                            Learn More About Me
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </a>
+                        <a href="./project.html" class="inline-flex items-center gap-2 border-2 border-primary text-primary px-6 py-3 rounded-full hover:bg-primary hover:text-white transition-colors duration-300">
+                            View Projects
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section class="py-12 animate-fade-in">
+                <h2 class="text-3xl font-[prata] text-primary mb-8">Core Skills</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-300">
+                        <div class="text-primary mb-4">
+                            <svg viewBox="0 0 24 24" fill="currentColor" height="3em" width="3em">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-[prata] text-gray-800 mb-2">Frontend</h3>
+                        <p class="text-gray-600 text-sm">React, Next.js, Tailwind CSS</p>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-300">
+                        <div class="text-primary mb-4">
+                            <svg viewBox="0 0 24 24" fill="currentColor" height="3em" width="3em">
+                                <path d="M20 3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H4V5h16v14z"></path>
+                                <path d="M6 7h12v2H6zm0 4h12v2H6zm0 4h12v2H6z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-[prata] text-gray-800 mb-2">Backend</h3>
+                        <p class="text-gray-600 text-sm">Node.js, Express, MongoDB</p>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-300">
+                        <div class="text-primary mb-4">
+                            <svg viewBox="0 0 24 24" fill="currentColor" height="3em" width="3em">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path>
+                                <path d="M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-[prata] text-gray-800 mb-2">UI/UX</h3>
+                        <p class="text-gray-600 text-sm">Responsive Design, Accessibility</p>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-300">
+                        <div class="text-primary mb-4">
+                            <svg viewBox="0 0 24 24" fill="currentColor" height="3em" width="3em">
+                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-[prata] text-gray-800 mb-2">Tools</h3>
+                        <p class="text-gray-600 text-sm">Git, VS Code, Docker</p>
+                    </div>
                 </div>
             </section>
 
             <!-- Quick Links -->
-            <section class="py-10">
+            <section class="py-12 animate-fade-in">
+                <h2 class="text-3xl font-[prata] text-primary mb-8">Explore More</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <a href="./project.html" class="group bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <a href="./project.html" class="quick-link-card group bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
                         <div class="flex justify-between items-center">
                             <h2 class="text-2xl font-[prata] text-primary">Projects</h2>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
@@ -69,7 +175,7 @@
                         <p class="text-gray-600 mt-2">Explore my latest projects and technical achievements</p>
                     </a>
 
-                    <a href="./resume.html" class="group bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <a href="./resume.html" class="quick-link-card group bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
                         <div class="flex justify-between items-center">
                             <h2 class="text-2xl font-[prata] text-primary">Resume</h2>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
@@ -77,7 +183,7 @@
                         <p class="text-gray-600 mt-2">View my professional experience and skills</p>
                     </a>
 
-                    <a href="./tools.html" class="group bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <a href="./tools.html" class="quick-link-card group bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
                         <div class="flex justify-between items-center">
                             <h2 class="text-2xl font-[prata] text-primary">Tools</h2>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
@@ -85,7 +191,7 @@
                         <p class="text-gray-600 mt-2">Discover the technologies and tools I work with</p>
                     </a>
 
-                    <a href="./about.html" class="group bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <a href="./about.html" class="quick-link-card group bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
                         <div class="flex justify-between items-center">
                             <h2 class="text-2xl font-[prata] text-primary">About</h2>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>

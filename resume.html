@@ -15,11 +15,40 @@
           colors: {
             primary: '#2563eb',
             secondary: '#1e40af',
-          }
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.5s ease-in-out',
+            'slide-up': 'slideUp 0.5s ease-in-out',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            slideUp: {
+              '0%': { transform: 'translateY(20px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' },
+            },
+          },
         }
       }
     }
   </script>
+  <style>
+    .hover-scale {
+      transition: transform 0.3s ease;
+    }
+    .hover-scale:hover {
+      transform: scale(1.02);
+    }
+    .skill-tag {
+      transition: all 0.3s ease;
+    }
+    .skill-tag:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    }
+  </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
   <div class="2xl:container mx-auto">
@@ -57,33 +86,56 @@
       </nav>
 
       <!-- Resume Content -->
-      <section class="py-10 bg-white rounded-2xl shadow-lg p-8 mb-8">
-        <h2 class="text-3xl font-bold font-[prata] mb-6 text-primary">Full Stack Developer</h2>
-        <p class="mb-6 text-lg leading-relaxed">Motivated MERN Stack Developer with a strong foundation in full-stack web development. Currently enrolled in the Full Stack course at Revamp Academy. Skilled in React.js, Next.js, Tailwind CSS, and JavaScript with practical experience in deployment and version control. A team player and fast learner passionate about building intuitive and responsive web applications.</p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div class="space-y-2">
-            <p class="flex items-center gap-2">
+      <section class="py-10 bg-white rounded-2xl shadow-lg p-8 mb-8 animate-fade-in">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-8">
+          <div>
+            <h2 class="text-3xl font-bold font-[prata] text-primary">Full Stack Developer</h2>
+            <p class="text-gray-600 mt-2">MERN Stack | React.js | Node.js</p>
+          </div>
+          <div class="flex gap-4">
+            <a href="mailto:muthusuganthan2020pmk@gmail.com" class="text-primary hover:text-secondary transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </a>
+            <a href="https://github.com/muthusuganthan" target="_blank" class="text-primary hover:text-secondary transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            </a>
+            <a href="#" class="text-primary hover:text-secondary transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+                <circle cx="4" cy="4" r="2" stroke="none" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <p class="mb-6 text-lg leading-relaxed text-gray-700">Motivated MERN Stack Developer with a strong foundation in full-stack web development. Currently enrolled in the Full Stack course at Revamp Academy. Skilled in React.js, Next.js, Tailwind CSS, and JavaScript with practical experience in deployment and version control. A team player and fast learner passionate about building intuitive and responsive web applications.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="space-y-4">
+            <p class="flex items-center gap-3 text-gray-700">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                 <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
               </svg>
               <a href="mailto:muthusuganthan2020pmk@gmail.com" class="text-primary hover:underline">muthusuganthan2020pmk@gmail.com</a>
             </p>
-            <p class="flex items-center gap-2">
+            <p class="flex items-center gap-3 text-gray-700">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
               </svg>
               +91 6381921562
             </p>
           </div>
-          <div class="space-y-2">
-            <p class="flex items-center gap-2">
+          <div class="space-y-4">
+            <p class="flex items-center gap-3 text-gray-700">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
               </svg>
               Paramakudi, Tamil Nadu
             </p>
-            <p class="flex items-center gap-2">
+            <p class="flex items-center gap-3 text-gray-700">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
               </svg>
@@ -93,12 +145,12 @@
         </div>
       </section>
 
-      <section class="py-5 bg-white rounded-2xl shadow-lg p-8 mb-8">
+      <section class="py-5 bg-white rounded-2xl shadow-lg p-8 mb-8 animate-slide-up">
         <h2 class="text-2xl font-bold font-[prata] mb-6 text-primary">Experience</h2>
-        <div class="space-y-6">
-          <div>
+        <div class="space-y-8">
+          <div class="border-l-4 border-primary pl-6 py-2 hover-scale">
             <h3 class="text-xl font-semibold mb-2">Digital Marketing Intern (Remote)</h3>
-            <p class="text-gray-600 mb-2">FlyBrand Digital Solutions | May 2025 – Nov 2025</p>
+            <p class="text-gray-600 mb-3">FlyBrand Digital Solutions | May 2025 – Nov 2025</p>
             <ul class="list-disc pl-5 space-y-2 text-gray-700">
               <li>Worked on landing pages and front-end tasks using React.js and Tailwind CSS</li>
               <li>Collaborated on team-based marketing tech implementations</li>
@@ -108,104 +160,170 @@
         </div>
       </section>
 
-      <section class="py-5 bg-white rounded-2xl shadow-lg p-8 mb-8">
+      <section class="py-5 bg-white rounded-2xl shadow-lg p-8 mb-8 animate-slide-up">
         <h2 class="text-2xl font-bold font-[prata] mb-6 text-primary">Skills</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
-            <h3 class="text-lg font-semibold mb-3">Frontend</h3>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1 bg-blue-100 text-primary rounded-full">HTML5</span>
-              <span class="px-3 py-1 bg-blue-100 text-primary rounded-full">CSS3</span>
-              <span class="px-3 py-1 bg-blue-100 text-primary rounded-full">JavaScript</span>
-              <span class="px-3 py-1 bg-blue-100 text-primary rounded-full">React.js</span>
-              <span class="px-3 py-1 bg-blue-100 text-primary rounded-full">Next.js</span>
-              <span class="px-3 py-1 bg-blue-100 text-primary rounded-full">Tailwind CSS</span>
+            <h3 class="text-lg font-semibold mb-4 text-gray-800">Frontend</h3>
+            <div class="flex flex-wrap gap-3">
+              <span class="skill-tag px-4 py-2 bg-blue-50 text-primary rounded-full text-sm font-medium">HTML5</span>
+              <span class="skill-tag px-4 py-2 bg-blue-50 text-primary rounded-full text-sm font-medium">CSS3</span>
+              <span class="skill-tag px-4 py-2 bg-blue-50 text-primary rounded-full text-sm font-medium">JavaScript</span>
+              <span class="skill-tag px-4 py-2 bg-blue-50 text-primary rounded-full text-sm font-medium">React.js</span>
+              <span class="skill-tag px-4 py-2 bg-blue-50 text-primary rounded-full text-sm font-medium">Next.js</span>
+              <span class="skill-tag px-4 py-2 bg-blue-50 text-primary rounded-full text-sm font-medium">Tailwind CSS</span>
             </div>
           </div>
           <div>
-            <h3 class="text-lg font-semibold mb-3">Backend</h3>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1 bg-blue-100 text-primary rounded-full">Node.js</span>
-              <span class="px-3 py-1 bg-blue-100 text-primary rounded-full">Express.js</span>
-              <span class="px-3 py-1 bg-blue-100 text-primary rounded-full">REST APIs</span>
+            <h3 class="text-lg font-semibold mb-4 text-gray-800">Backend</h3>
+            <div class="flex flex-wrap gap-3">
+              <span class="skill-tag px-4 py-2 bg-blue-50 text-primary rounded-full text-sm font-medium">Node.js</span>
+              <span class="skill-tag px-4 py-2 bg-blue-50 text-primary rounded-full text-sm font-medium">Express.js</span>
+              <span class="skill-tag px-4 py-2 bg-blue-50 text-primary rounded-full text-sm font-medium">REST APIs</span>
             </div>
           </div>
           <div>
-            <h3 class="text-lg font-semibold mb-3">Databases</h3>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1 bg-blue-100 text-primary rounded-full">MongoDB</span>
-              <span class="px-3 py-1 bg-blue-100 text-primary rounded-full">MySQL</span>
-              <span class="px-3 py-1 bg-blue-100 text-primary rounded-full">Firebase</span>
+            <h3 class="text-lg font-semibold mb-4 text-gray-800">Databases</h3>
+            <div class="flex flex-wrap gap-3">
+              <span class="skill-tag px-4 py-2 bg-blue-50 text-primary rounded-full text-sm font-medium">MongoDB</span>
+              <span class="skill-tag px-4 py-2 bg-blue-50 text-primary rounded-full text-sm font-medium">MySQL</span>
+              <span class="skill-tag px-4 py-2 bg-blue-50 text-primary rounded-full text-sm font-medium">Firebase</span>
             </div>
           </div>
           <div>
-            <h3 class="text-lg font-semibold mb-3">Tools & Others</h3>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1 bg-blue-100 text-primary rounded-full">Git</span>
-              <span class="px-3 py-1 bg-blue-100 text-primary rounded-full">GitHub</span>
-              <span class="px-3 py-1 bg-blue-100 text-primary rounded-full">VS Code</span>
-              <span class="px-3 py-1 bg-blue-100 text-primary rounded-full">Postman</span>
-              <span class="px-3 py-1 bg-blue-100 text-primary rounded-full">Figma</span>
+            <h3 class="text-lg font-semibold mb-4 text-gray-800">Tools & Others</h3>
+            <div class="flex flex-wrap gap-3">
+              <span class="skill-tag px-4 py-2 bg-blue-50 text-primary rounded-full text-sm font-medium">Git</span>
+              <span class="skill-tag px-4 py-2 bg-blue-50 text-primary rounded-full text-sm font-medium">GitHub</span>
+              <span class="skill-tag px-4 py-2 bg-blue-50 text-primary rounded-full text-sm font-medium">VS Code</span>
+              <span class="skill-tag px-4 py-2 bg-blue-50 text-primary rounded-full text-sm font-medium">Postman</span>
+              <span class="skill-tag px-4 py-2 bg-blue-50 text-primary rounded-full text-sm font-medium">Figma</span>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="py-5 bg-white rounded-2xl shadow-lg p-8 mb-8">
+      <section class="py-5 bg-white rounded-2xl shadow-lg p-8 mb-8 animate-slide-up">
         <h2 class="text-2xl font-bold font-[prata] mb-6 text-primary">Projects</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="space-y-4">
-            <div class="border-l-4 border-primary pl-4">
-              <h3 class="font-semibold">Tourism Website</h3>
+          <div class="space-y-6">
+            <div class="border-l-4 border-primary pl-4 hover-scale">
+              <h3 class="font-semibold text-lg">Tourism Website</h3>
               <p class="text-gray-600">HTML5, CSS3, Tailwind CSS</p>
-              <p class="text-gray-700">Responsive layout of attractive destinations</p>
+              <ul class="list-disc pl-5 text-gray-700 mt-2 space-y-1">
+                <li>Developed using HTML5, CSS3, and Tailwind CSS</li>
+                <li>Showcases attractive destinations</li>
+                <li>Features a fully responsive layout</li>
+              </ul>
             </div>
-            <div class="border-l-4 border-primary pl-4">
-              <h3 class="font-semibold">Food Store Website</h3>
+            <div class="border-l-4 border-primary pl-4 hover-scale">
+              <h3 class="font-semibold text-lg">Food Store Website</h3>
               <p class="text-gray-600">HTML5, CSS3, Tailwind CSS</p>
-              <p class="text-gray-700">Static web app with modern design</p>
+              <ul class="list-disc pl-5 text-gray-700 mt-2 space-y-1">
+                <li>A static website created with HTML5, CSS3, and Tailwind CSS</li>
+                <li>Highlights food products and categories</li>
+              </ul>
             </div>
-            <div class="border-l-4 border-primary pl-4">
-              <h3 class="font-semibold">E-commerce Frontend</h3>
+            <div class="border-l-4 border-primary pl-4 hover-scale">
+              <h3 class="font-semibold text-lg">Personal Portfolio</h3>
+              <p class="text-gray-600">HTML5, CSS3, Tailwind CSS</p>
+              <ul class="list-disc pl-5 text-gray-700 mt-2 space-y-1">
+                <li>Built using HTML5, CSS3, and Tailwind CSS</li>
+                <li>Highlights personal projects and skills</li>
+              </ul>
+            </div>
+            <div class="border-l-4 border-primary pl-4 hover-scale">
+              <h3 class="font-semibold text-lg">Interactive Counter App</h3>
+              <p class="text-gray-600">JavaScript, Tailwind CSS</p>
+              <ul class="list-disc pl-5 text-gray-700 mt-2 space-y-1">
+                <li>Developed using JavaScript and Tailwind CSS</li>
+                <li>Includes increment, decrement, and reset functionalities</li>
+              </ul>
+            </div>
+            <div class="border-l-4 border-primary pl-4 hover-scale">
+              <h3 class="font-semibold text-lg">Responsive Contact Form</h3>
+              <p class="text-gray-600">HTML5, CSS3, Tailwind CSS, JavaScript, Firebase</p>
+              <ul class="list-disc pl-5 text-gray-700 mt-2 space-y-1">
+                <li>Built using HTML5, CSS3, Tailwind CSS, and JavaScript</li>
+                <li>Integrated with Firebase Realtime Database for storing submissions</li>
+              </ul>
+            </div>
+            <div class="border-l-4 border-primary pl-4 hover-scale">
+              <h3 class="font-semibold text-lg">E-commerce Application</h3>
               <p class="text-gray-600">React.js</p>
-              <p class="text-gray-700">Complete e-commerce solution with cart functionality</p>
+              <ul class="list-disc pl-5 text-gray-700 mt-2 space-y-1">
+                <li>Developed frontend using React.js</li>
+                <li>Features product display and add-to-cart functionality</li>
+              </ul>
             </div>
           </div>
-          <div class="space-y-4">
-            <div class="border-l-4 border-primary pl-4">
-              <h3 class="font-semibold">Authentication Dashboard</h3>
-              <p class="text-gray-600">Next.js + NextAuth.js</p>
-              <p class="text-gray-700">Secure admin access system</p>
+          <div class="space-y-6">
+            <div class="border-l-4 border-primary pl-4 hover-scale">
+              <h3 class="font-semibold text-lg">Authentication Dashboard</h3>
+              <p class="text-gray-600">Next.js, NextAuth.js</p>
+              <ul class="list-disc pl-5 text-gray-700 mt-2 space-y-1">
+                <li>Built with Next.js and NextAuth.js</li>
+                <li>Secure admin dashboard with user authentication</li>
+              </ul>
             </div>
-            <div class="border-l-4 border-primary pl-4">
-              <h3 class="font-semibold">Task Management Backend</h3>
-              <p class="text-gray-600">Express.js + MongoDB</p>
-              <p class="text-gray-700">Full CRUD operations implementation</p>
+            <div class="border-l-4 border-primary pl-4 hover-scale">
+              <h3 class="font-semibold text-lg">Reusable UI Component Library</h3>
+              <p class="text-gray-600">shadcn, Magic UI, Tailwind CSS</p>
+              <ul class="list-disc pl-5 text-gray-700 mt-2 space-y-1">
+                <li>Created using shadcn, Magic UI, and Tailwind CSS</li>
+                <li>Accelerates frontend development with reusable components</li>
+              </ul>
             </div>
-            <div class="border-l-4 border-primary pl-4">
-              <h3 class="font-semibold">E-commerce Backend</h3>
-              <p class="text-gray-600">Express.js + MongoDB</p>
-              <p class="text-gray-700">Complete e-commerce backend with user, product, cart management</p>
+            <div class="border-l-4 border-primary pl-4 hover-scale">
+              <h3 class="font-semibold text-lg">RESTful API</h3>
+              <p class="text-gray-600">Express.js</p>
+              <ul class="list-disc pl-5 text-gray-700 mt-2 space-y-1">
+                <li>Modular API demonstrating route handling and middleware</li>
+              </ul>
+            </div>
+            <div class="border-l-4 border-primary pl-4 hover-scale">
+              <h3 class="font-semibold text-lg">Task Management Backend</h3>
+              <p class="text-gray-600">Express.js, MongoDB</p>
+              <ul class="list-disc pl-5 text-gray-700 mt-2 space-y-1">
+                <li>Created using Express.js and MongoDB</li>
+                <li>Supports full CRUD operations and task filtering</li>
+              </ul>
+            </div>
+            <div class="border-l-4 border-primary pl-4 hover-scale">
+              <h3 class="font-semibold text-lg">Authentication System</h3>
+              <p class="text-gray-600">JWT, bcrypt, Express.js</p>
+              <ul class="list-disc pl-5 text-gray-700 mt-2 space-y-1">
+                <li>Implemented using JWT, bcrypt, and Express.js</li>
+                <li>Includes role-based access control</li>
+              </ul>
+            </div>
+            <div class="border-l-4 border-primary pl-4 hover-scale">
+              <h3 class="font-semibold text-lg">E-commerce Backend</h3>
+              <p class="text-gray-600">Express.js, MongoDB</p>
+              <ul class="list-disc pl-5 text-gray-700 mt-2 space-y-1">
+                <li>Developed with Express.js and MongoDB</li>
+                <li>Features user authentication, product management, cart, and order operations</li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="py-5 bg-white rounded-2xl shadow-lg p-8 mb-8">
+      <section class="py-5 bg-white rounded-2xl shadow-lg p-8 mb-8 animate-slide-up">
         <h2 class="text-2xl font-bold font-[prata] mb-6 text-primary">Languages</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div class="text-center p-4 bg-gray-50 rounded-lg">
-            <h3 class="font-semibold mb-2">English</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="text-center p-6 bg-gray-50 rounded-xl hover-scale">
+            <h3 class="font-semibold text-lg mb-2">English</h3>
             <p class="text-gray-600">Professional</p>
           </div>
-          <div class="text-center p-4 bg-gray-50 rounded-lg">
-            <h3 class="font-semibold mb-2">Tamil</h3>
+          <div class="text-center p-6 bg-gray-50 rounded-xl hover-scale">
+            <h3 class="font-semibold text-lg mb-2">Tamil</h3>
             <p class="text-gray-600">Native</p>
           </div>
-          <div class="text-center p-4 bg-gray-50 rounded-lg">
-            <h3 class="font-semibold mb-2">Hindi</h3>
+          <div class="text-center p-6 bg-gray-50 rounded-xl hover-scale">
+            <h3 class="font-semibold text-lg mb-2">Hindi</h3>
             <p class="text-gray-600">Working Proficiency</p>
-            <p class="text-sm text-gray-500">Rashtrabhasha Praveen Certified</p>
+            <p class="text-sm text-gray-500 mt-1">Rashtrabhasha Praveen Certified</p>
           </div>
         </div>
       </section>

@@ -15,11 +15,57 @@
                     colors: {
                         primary: '#2563eb',
                         secondary: '#1e40af',
-                    }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'slide-up': 'slideUp 0.5s ease-in-out',
+                        'bounce-slow': 'bounce 3s infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                    },
                 }
             }
         }
     </script>
+    <style>
+        .tool-card {
+            transition: all 0.3s ease;
+        }
+        .tool-card:hover {
+            transform: translateY(-5px);
+        }
+        .tool-icon {
+            transition: all 0.3s ease;
+        }
+        .tool-card:hover .tool-icon {
+            transform: scale(1.1);
+        }
+        .category-title {
+            position: relative;
+            display: inline-block;
+        }
+        .category-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #2563eb;
+            transition: width 0.3s ease;
+        }
+        .category-title:hover::after {
+            width: 100%;
+        }
+    </style>
 </head>
 <body class="bg-gray-50">
     <div class="2xl:container mx-auto">
